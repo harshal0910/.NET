@@ -1,0 +1,38 @@
+﻿@using BOL;
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<form>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>MfgDate</th>
+            </tr>
+        </thead>
+            <tbody>
+                @{
+                    foreach (Product p in ViewBag.ProductDetails)
+                    {
+                        <tr>
+                            <td>@p.Id</td>
+                            <td>@p.Name</td>
+                            <td>@p.Description</td>
+                            <td>@p.category</td>
+                            <td>@p.price</td>
+                            <td>@p.mfgDate</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        
+    </table>
+</form>
+
+
+<button type="button" onclick="location.href='/Product/Insert'" class="btn btn-danger">Add Employee</button></>
